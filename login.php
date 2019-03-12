@@ -1,26 +1,37 @@
-	<?php
-	if(isset($_POST['login'])){
-		$usern = $_POST['Username'];
-		$pass = md5($_POST['password']);
+<?php
+if(isset($_POST['login'])){
+	$usern = $_POST['Username'];
+	$pass = md5($_POST['password']);
 
-		include "dbcon.php"; 
-		$sql = "SELECT * FROM user WHERE username = '".$usern."' AND
-		password = '".$pass."'"; 
+	include "dbcon.php"; 
+	$sql = "SELECT * FROM user WHERE username = '".$usern."' AND
+	password = '".$pass."'"; 
 
-		$result = mysqli_query($conn,$sql); 
-		if($result){
-			session_start();
-			$_SESSION['user'] = mysqli_fetch_array($result);
-		}
-		else{
-			echo "Username or password is incorrect!"; 
-		}
-
+	$result = mysqli_query($conn,$sql); 
+	if($result){
+		?>
+		<div id="snackbar">Login successful.</div>
+		<script>
+		    var x = document.getElementById("snackbar")
+		    x.className = "show";
+		    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+		</script>
+		<?php
+		session_start();
+		$_SESSION['user'] = $usern;
+	}
+	else{
+		?>
+		<div id="snackbar">Username or password is incorrect.</div>
+		<script>
+		    var x = document.getElementById("snackbar")
+		    x.className = "show";
+		    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+		</script>
+		<?php
 	}
 
-
-	 
-
+}
 ?>
 <html lang="en">
 <head>
@@ -58,12 +69,28 @@
 							<li class="head-dpdn">
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +02 222 3456 
 							</li> 
-							<li class="head-dpdn">
-								<a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-							</li> 
-							<li class="head-dpdn">
-								<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-							</li> 							
+							<?php
+								if(isset($_SESSION['user'])) {
+									?>
+									<li class="head-dpdn">
+										Hi, <?php echo $_SESSION['user'] ?>
+									</li> 
+									<li class="head-dpdn">
+										<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+									</li> 
+									<?php
+								} else {
+									?>
+									<li class="head-dpdn">
+										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+									</li> 
+									<li class="head-dpdn">
+										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> 
+									<?php
+								}
+							?>
+														
 						</ul>
 					</div>
 					<div class="clearfix"> </div> 
@@ -82,14 +109,14 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.html">Munch & Chillz<span>Pandog is lyf</span></a></h1>
+							<h1><a href="index.php">Munch & Chillz<span>Pandog is lyf</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.html" class="active">Home</a></li>
-								<li><a href="menu.html">Menu</a></li>
-								<li><a href="about.html">About</a></li> 								
-								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="index.php">Home</a></li>
+								<li><a href="menu.php">Menu</a></li>
+								<li><a href="about.php">About</a></li> 								
+								<li><a href="contact.php">Contact Us</a></li>
 							</ul>
 						</div>
 						<div class="cart cart box_1"> 
@@ -127,7 +154,7 @@
 		<div class="container"> 
 			<h3 class="w3ls-title w3ls-title1">Login to your account</h3>  
 			<div class="login-agileinfo"> 
-				<form action="#" method="post"> 
+				<form method="post"> 
 					<input class="agile-ltext" type="text" name="Username" placeholder="Username" required="">
 					<input class="agile-ltext" type="password" name="password" placeholder="Password" required="">
 					<div class="wthreelogin-text"> 
@@ -137,7 +164,6 @@
 								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i> 
 									<span> Remember me ?</span> 
 							</li>
-							<li><a href="#">Forgot password?</a> </li>
 						</ul>
 						<div class="clearfix"> </div>
 					</div>   
@@ -147,18 +173,6 @@
 			</div>	 
 		</div>
 	</div>
-
-
-
-
-
-
-
-
-
-
-
-
 	<!-- //login-page -->  
 	<!-- footer -->
 	<div class="footer agileits-w3layouts">
@@ -167,23 +181,23 @@
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>company</h3>
 					<ul>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="contact.html">Contact Us</a></li>	
-						<li><a href="contact.html">Partner With Us</a></li>   
+						<li><a href="about.php">About Us</a></li>
+						<li><a href="contact.php">Contact Us</a></li>	
+						<li><a href="contact.php">Partner With Us</a></li>   
 					</ul>
 				</div> 				
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>policy info</h3>
 					<ul>  
-						<li><a href="terms.html">Terms & Conditions</a></li>  
-						<li><a href="privacy.html">Privacy Policy</a></li>
-						<li><a href="login.html">Return Policy</a></li> 
+						<li><a href="terms.php">Terms & Conditions</a></li>  
+						<li><a href="privacy.php">Privacy Policy</a></li>
+						<li><a href="login.php">Return Policy</a></li> 
 					</ul>   
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
 					<ul>
-						<li><a href="menu.html">All Day Menu</a></li>  
+						<li><a href="menu.php">All Day Menu</a></li>  
 					</ul>  
 				</div> 
 				<div class="clearfix"> </div>

@@ -39,7 +39,7 @@
 								<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="signup.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+								<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
 							</li> 							
 						</ul>
 					</div>
@@ -59,14 +59,14 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.html">Munch & Chillz<span>Pandog is lyf</span></a></h1>
+							<h1><a href="index.php">Munch & Chillz<span>Pandog is lyf</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.html" class="active">Home</a></li>
-								<li><a href="menu.html">Menu</a></li>
-								<li><a href="about.html">About</a></li> 								
-								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="index.php">Home</a></li>
+								<li><a href="menu.php">Menu</a></li>
+								<li><a href="about.php">About</a></li> 								
+								<li><a href="contact.php">Contact Us</a></li>
 							</ul>
 						</div>
 						<div class="cart cart box_1"> 
@@ -136,14 +136,26 @@
 
 		$sql = "INSERT INTO user( username, password,email)
 					VALUES('$uname', '$pass', '$email')";
-		// echo $sql;
 		$result = mysqli_query($conn, $sql);
 
 		if($result){
-			echo "Thank you registering";
+			?>
+			<div id="snackbar">Thank you registering</div>
+			<script>
+			    var x = document.getElementById("snackbar")
+			    x.className = "show";
+			    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+			</script>
+			<?php
 		} else {
-			echo "Connection error, try again later";
-			echo $result;
+			?>
+			<div id="snackbar">Connection error. Try again later.</div>
+			<script>
+			    var x = document.getElementById("snackbar")
+			    x.className = "show";
+			    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+			</script>
+			<?php
 		}
 
 	}
@@ -160,23 +172,23 @@
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>company</h3>
 					<ul>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="contact.html">Contact Us</a></li>	
-						<li><a href="contact.html">Partner With Us</a></li>   
+						<li><a href="about.php">About Us</a></li>
+						<li><a href="contact.php">Contact Us</a></li>	
+						<li><a href="contact.php">Partner With Us</a></li>   
 					</ul>
 				</div> 				
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>policy info</h3>
 					<ul>  
-						<li><a href="terms.html">Terms & Conditions</a></li>  
-						<li><a href="privacy.html">Privacy Policy</a></li>
+						<li><a href="terms.php">Terms & Conditions</a></li>  
+						<li><a href="privacy.php">Privacy Policy</a></li>
 						<li><a href="login.php">Return Policy</a></li> 
 					</ul>   
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
 					<ul>
-						<li><a href="menu.html">All Day Menu</a></li>  
+						<li><a href="menu.php">All Day Menu</a></li>  
 					</ul>  
 				</div> 
 				<div class="clearfix"> </div>

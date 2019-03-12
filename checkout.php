@@ -1,13 +1,7 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<title>Munch & Chillz | Sign Up</title>
+<title>Munch & Chillz | Check Out</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -42,10 +36,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +02 222 3456 
 							</li> 
 							<li class="head-dpdn">
-								<a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+								<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="signup.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+								<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
 							</li> 							
 						</ul>
 					</div>
@@ -65,14 +59,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.html">Munch & Chillz<span>Pandog is lyf</span></a></h1>
+							<h1><a href="index.php">Munch & Chillz<span>Pandog is lyf</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.html" class="active">Home</a></li>
-								<li><a href="menu.html">Menu</a></li>
-								<li><a href="about.html">About</a></li> 								
-								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="index.php">Home</a></li>
+								<li><a href="menu.php">Menu</a></li>
+								<li><a href="about.php">About</a></li> 								
+								<li><a href="contact.php">Contact Us</a></li>
 							</ul>
 						</div>
 						<div class="cart cart box_1"> 
@@ -108,29 +102,73 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="login-page about">
 		<img class="login-w3img" src="images/img3.jpg" alt="">
 		<div class="container"> 
-			<h3 class="w3ls-title w3ls-title1">Sign Up to your account</h3>  
+			<h3 class="w3ls-title w3ls-title1">Delivery Details</h3>  
 			<div class="login-agileinfo"> 
 				<form action="#" method="post"> 
-					<input class="agile-ltext" type="text" name="Username" placeholder="Username" required="">
-					<input class="agile-ltext" type="email" name="Your Email" placeholder="Your Email" required="">
-					<input class="agile-ltext" type="password" name="password" placeholder="Password" required="">
-					<input class="agile-ltext" type="password" name="Confirm Password" placeholder="Confirm Password" required="">
-					<div class="wthreelogin-text"> 
-						<ul> 
-							<li>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i> 
-									<span> I agree to the terms of service</span> 
-								</label> 
-							</li> 
-						</ul>
-						<div class="clearfix"> </div>
-					</div>   
-					<input type="submit" value="Sign Up">
+					<input class="agile-ltext" type="text" name="house" placeholder="House No/Unit No/Bulding" required="">
+					<input class="agile-ltext" type="text" name="street" placeholder="Street name" required="">
+					<input class="agile-ltext" type="text" name="barangay" placeholder="Barangay / Village / Subdivision" required="">
+					<input class="agile-ltext" type="text" name="city" placeholder="City" required="">
+					<div class="wthreelogin-text">    
+					<input type="submit" name="register" value="Confirm Check Out">
 				</form>
-				<p>Already have an account?  <a href="login.html"> Login Now!</a></p> 
 			</div>	 
 		</div>
 	</div>
+
+<?php
+	if (isset($_POST['register'])) {
+		$house = $_POST['house'];
+		$street = $_POST['street'];
+		$barangay = $_POST['barangay'];
+		$city = $_POST['city'];
+
+		?>
+		<script src="js/minicart.js"></script>
+		<script>
+			var items = w3ls.cart.items(1);
+			
+			window.location.href = "somepage.php?w1=" + "hello" + "&w2=" + items.toString();
+			
+		</script>
+<!--
+		<?php
+
+		//include "dbcon.php"; // database connection
+
+		//$sql = "INSERT INTO user( username, password,email)
+		//			VALUES('$uname', '$pass', '$email')";
+		//$result = mysqli_query($conn, $sql);
+
+		//if($result){
+			?>
+			<div id="snackbar">Thank you registering</div>
+			<script>
+
+        	 
+			    var x = document.getElementById("snackbar")
+			    x.className = "show";
+			    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+			</script>
+			<?php
+		//} else {
+			?>
+			<div id="snackbar">Connection error. Try again later.</div>
+			<script>
+			    var x = document.getElementById("snackbar")
+			    x.className = "show";
+			    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+			</script>
+			<?php
+		}
+
+	
+
+?>
+-->
+
+
+
 	<!-- //sign up-page -->  
 	<!-- footer -->
 	<div class="footer agileits-w3layouts">
@@ -139,23 +177,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>company</h3>
 					<ul>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="contact.html">Contact Us</a></li>	
-						<li><a href="contact.html">Partner With Us</a></li>   
+						<li><a href="about.php">About Us</a></li>
+						<li><a href="contact.php">Contact Us</a></li>	
+						<li><a href="contact.php">Partner With Us</a></li>   
 					</ul>
 				</div> 				
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>policy info</h3>
 					<ul>  
-						<li><a href="terms.html">Terms & Conditions</a></li>  
-						<li><a href="privacy.html">Privacy Policy</a></li>
-						<li><a href="login.html">Return Policy</a></li> 
+						<li><a href="terms.php">Terms & Conditions</a></li>  
+						<li><a href="privacy.php">Privacy Policy</a></li>
+						<li><a href="login.php">Return Policy</a></li> 
 					</ul>   
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
 					<ul>
-						<li><a href="menu.html">All Day Menu</a></li>  
+						<li><a href="menu.php">All Day Menu</a></li>  
 					</ul>  
 				</div> 
 				<div class="clearfix"> </div>
@@ -180,8 +218,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         		items = this.items();
 
         		for (i = 0, len = items.length; i < len; i++) { 
+        			
         		}
         	}
+
+
         });
     </script>  
 	<!-- //cart-js -->	

@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Munch & Chillz | Login </title>
+<title>Munch & Chillz | Contact Us</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -42,10 +42,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +02 222 3456 
 							</li> 
 							<li class="head-dpdn">
-								<a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+								<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="signup.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+								<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
 							</li> 							
 						</ul>
 					</div>
@@ -65,14 +65,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.html">Munch & Chillz<span>Pandog is lyf</span></a></h1>
+							<h1><a href="index.php">Munch & Chillz<span>Pandog is lyf</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.html" class="active">Home</a></li>
-								<li><a href="menu.html">Menu</a></li>
-								<li><a href="about.html">About</a></li> 								
-								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="index.php">Home</a></li>
+								<li><a href="menu.php">Menu</a></li>
+								<li><a href="about.php">About</a></li> 								
+								<li><a href="contact.php" class="active">Contact Us</a></li>
 							</ul>
 						</div>
 						<div class="cart cart box_1"> 
@@ -95,42 +95,76 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 		</div>
 	</div>
-	<!-- //banner --> 
+	<!-- //banner -->     
 	<!-- breadcrumb -->  
 	<div class="container">	
 		<ol class="breadcrumb w3l-crumbs">
 			<li><a href="#"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Login</li>
+			<li class="active">Contact Us</li>
 		</ol>
 	</div>
 	<!-- //breadcrumb -->
-	<!-- login-page -->
-	<div class="login-page about">
-		<img class="login-w3img" src="images/img3.jpg" alt="">
-		<div class="container"> 
-			<h3 class="w3ls-title w3ls-title1">Login to your account</h3>  
-			<div class="login-agileinfo"> 
-				<form action="#" method="post"> 
-					<input class="agile-ltext" type="text" name="Username" placeholder="Username" required="">
-					<input class="agile-ltext" type="password" name="password" placeholder="Password" required="">
-					<div class="wthreelogin-text"> 
-						<ul> 
-							<li>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i> 
-									<span> Remember me ?</span> 
-								</label> 
-							</li>
-							<li><a href="#">Forgot password?</a> </li>
-						</ul>
+	<!-- contact -->
+	<div id="contact" class="contact cd-section">
+		<div class="container">
+			<h3 class="w3ls-title">Contact us</h3>
+			<p class="w3lsorder-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit sheets containing sed </p> 
+			<div class="contact-row agileits-w3layouts">  
+				<div class="col-xs-6 col-sm-6 contact-w3lsleft">
+					<div class="contact-grid agileits">
+						<h4>DROP US A LINE </h4>
+						<form action="#" method="post"> 
+							<input type="text" name="Name" placeholder="Name" required="">
+							<input type="email" name="Email" placeholder="Email" required=""> 
+							<input type="text" name="Phone Number" placeholder="Phone Number" required="">
+							<textarea name="Message" placeholder="Message..." required=""></textarea>
+							<input type="submit" value="Submit" >
+						</form> 
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-6 contact-w3lsright">
+					<h6><span>Sed interdum </span>interdum accumsan nec purus ac orci finibus facilisis. In sit amet placerat nisl in auctor sapien. </h6>
+					<div class="address-row">
+						<div class="col-xs-2 address-left">
+							<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+						</div>
+						<div class="col-xs-10 address-right">
+							<h5>Visit Us</h5>
+							<p>Broome St, Canada, NY 10002, New York </p>
+						</div>
 						<div class="clearfix"> </div>
-					</div>   
-					<input type="submit" value="LOGIN">
-				</form>
-				<p>Don't have an Account? <a href="signup.html"> Sign Up Now!</a></p> 
-			</div>	 
+					</div>
+					<div class="address-row w3-agileits">
+						<div class="col-xs-2 address-left">
+							<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+						</div>
+						<div class="col-xs-10 address-right">
+							<h5>Mail Us</h5>
+							<p><a href="mailto:info@example.com"> mail@example.com</a></p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="address-row">
+						<div class="col-xs-2 address-left">
+							<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+						</div>
+						<div class="col-xs-10 address-right">
+							<h5>Call Us</h5>
+							<p>+01 222 333 4444</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>  
+				</div>
+				<div class="clearfix"> </div>
+			</div>	
+		</div>	
+		<!-- map -->
+		<div class="map agileits">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.948805392833!2d-73.99619098458929!3d40.71914347933105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1479793484055"></iframe>
 		</div>
+		<!-- //map --> 
 	</div>
-	<!-- //login-page -->  
+	<!-- //contact -->   
 	<!-- footer -->
 	<div class="footer agileits-w3layouts">
 		<div class="container">
@@ -138,23 +172,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>company</h3>
 					<ul>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="contact.html">Contact Us</a></li>	
-						<li><a href="contact.html">Partner With Us</a></li>   
+						<li><a href="about.php">About Us</a></li>
+						<li><a href="contact.php">Contact Us</a></li>	
+						<li><a href="contact.php">Partner With Us</a></li>   
 					</ul>
 				</div> 				
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>policy info</h3>
 					<ul>  
-						<li><a href="terms.html">Terms & Conditions</a></li>  
-						<li><a href="privacy.html">Privacy Policy</a></li>
-						<li><a href="login.html">Return Policy</a></li> 
+						<li><a href="terms.php">Terms & Conditions</a></li>  
+						<li><a href="privacy.php">Privacy Policy</a></li>
+						<li><a href="login.php">Return Policy</a></li> 
 					</ul>   
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
 					<ul>
-						<li><a href="menu.html">All Day Menu</a></li>  
+						<li><a href="menu.php">All Day Menu</a></li>  
 					</ul>  
 				</div> 
 				<div class="clearfix"> </div>

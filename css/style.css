@@ -1168,6 +1168,8 @@ span.w3-agile-line {
 	padding:0;
 }
 .rsidebar-top {
+    background-image: url('t1.jpg');
+    height: 700px;
     padding: 2em;
 	-webkit-box-shadow: 0 0 14px 7px rgba(224, 224, 224, 0.5);
 	-moz-box-shadow: 0 0 14px 7px rgba(224, 224, 224, 0.5); 
@@ -1191,6 +1193,8 @@ input.item_quantity:hover{
     margin-top: 2em;
 }
 .rsidebar h4, .related-row h4 {
+    background-image: url('t2.jpg');
+    height: 600px;
     font-size: 1.1em;
     color: #464646;
     text-transform: uppercase;

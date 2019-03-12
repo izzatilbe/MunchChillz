@@ -1,10 +1,27 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
+	<?php
+	if(isset($_POST['login'])){
+		$usern = $_POST['Username'];
+		$pass = md5($_POST['password']);
+
+		include "dbcon.php"; 
+		$sql = "SELECT * FROM user WHERE username = '".$usern."' AND
+		password = '".$pass."'"; 
+
+		$result = mysqli_query($conn,$sql); 
+		if($result){
+			session_start();
+			$_SESSION['user'] = mysqli_fetch_array($result);
+		}
+		else{
+			echo "Username or password is incorrect!"; 
+		}
+
+	}
+
+
+	 
+
+?>
 <html lang="en">
 <head>
 <title>Munch & Chillz | Login </title>
@@ -45,7 +62,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="signup.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+								<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
 							</li> 							
 						</ul>
 					</div>
@@ -116,9 +133,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="wthreelogin-text"> 
 						<ul> 
 							<li>
+								</label> 
 								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i> 
 									<span> Remember me ?</span> 
-								</label> 
 							</li>
 							<li><a href="#">Forgot password?</a> </li>
 						</ul>
@@ -126,35 +143,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>   
 					<input type="submit" name="login" value="LOGIN">
 				</form>
-				<p>Don't have an Account? <a href="signup.html"> Sign Up Now!</a></p> 
+				<p>Don't have an Account? <a href="signup.php"> Sign Up Now!</a></p> 
 			</div>	 
 		</div>
 	</div>
 
 
-	<?php
-	if(isset($_POST['login'])){
-		$username = $_POST['Username'];
-		$password = md5($_POST['password']);
 
-		include "dbcon.php";
-
-		$sql = "SELECT * FROM users WHERE username = '$username' AND
-		password = '$password'";
-
-		$result = mysqli_query($sql);
-		if(mysqli_num_rows($result)==1){
-			session_start();
-			$_SESSION['user'] = mysqli_fetch_array($result);
-			header("location:home.php");
-		}
-		else{
-			echo "Username or password is incorrect!";
-		}
-
-	}
-
-?>
 
 
 

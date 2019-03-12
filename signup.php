@@ -1,10 +1,4 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <title>Munch & Chillz | Sign Up</title>
@@ -42,7 +36,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +02 222 3456 
 							</li> 
 							<li class="head-dpdn">
-								<a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+								<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 							</li> 
 							<li class="head-dpdn">
 								<a href="signup.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
@@ -112,7 +106,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="login-agileinfo"> 
 				<form action="#" method="post"> 
 					<input class="agile-ltext" type="text" name="Username" placeholder="Username" required="">
-					<input class="agile-ltext" type="email" name="Your Email" placeholder="Your Email" required="">
+					<input class="agile-ltext" type="email" name="email" placeholder="Your Email" required="">
 					<input class="agile-ltext" type="password" name="password" placeholder="Password" required="">
 					<input class="agile-ltext" type="password" name="Confirm Password" placeholder="Confirm Password" required="">
 					<div class="wthreelogin-text"> 
@@ -127,7 +121,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>   
 					<input type="submit" name="register" value="Sign Up">
 				</form>
-				<p>Already have an account?  <a href="login.html"> Login Now!</a></p> 
+				<p>Already have an account?  <a href="login.php"> Login Now!</a></p> 
 			</div>	 
 		</div>
 	</div>
@@ -136,11 +130,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	if (isset($_POST['register'])) {
 		$uname = $_POST['Username'];
 		$pass = md5($_POST['password']);
-		$email = $_POST['Your Email'];
+		$email = $_POST['email'];
 
 		include "dbcon.php"; // database connection
 
-		$sql = "INSERT INTO users( username, password,email)
+		$sql = "INSERT INTO user( username, password,email)
 					VALUES('$uname', '$pass', '$email')";
 		// echo $sql;
 		$result = mysqli_query($conn, $sql);
@@ -176,7 +170,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<ul>  
 						<li><a href="terms.html">Terms & Conditions</a></li>  
 						<li><a href="privacy.html">Privacy Policy</a></li>
-						<li><a href="login.html">Return Policy</a></li> 
+						<li><a href="login.php">Return Policy</a></li> 
 					</ul>   
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">

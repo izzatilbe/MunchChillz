@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 <html lang="en">
 <head>
 <title>Munch & Chillz | Check Out</title>
@@ -35,18 +35,34 @@
 							<li class="head-dpdn">
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +02 222 3456 
 							</li> 
-							<li class="head-dpdn">
-								<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-							</li> 
-							<li class="head-dpdn">
-								<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-							</li> 							
+							<?php
+								if(isset($_SESSION['user'])) {
+									?>
+									<li class="head-dpdn">
+										Hi, <?php echo $_SESSION['user'] ?>
+									</li> 
+									<li class="head-dpdn">
+										<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+									</li> 
+									<?php
+								} else {
+									?>
+									<li class="head-dpdn">
+										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+									</li> 
+									<li class="head-dpdn">
+										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> 
+									<?php
+								}
+							?>
+														
 						</ul>
 					</div>
 					<div class="clearfix"> </div> 
 				</div>
 			</div>
-			<!-- //header-one -->    
+			<!-- //header-one -->     
 			<!-- navigation -->
 			<div class="navigation agiletop-nav">
 				<div class="container">

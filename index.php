@@ -32,7 +32,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="banner">
 		<!-- header -->
 		<div class="header">
-			<div class="w3ls-header"><!-- header-one --> 
+			<div class="w3ls-header">
+				<!-- header-one --> 
 				<div class="container">
 					<div class="w3ls-header-left">
 						<p>Free home delivery at your doorstep For Above ₱200</p>

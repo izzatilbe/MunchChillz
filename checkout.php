@@ -126,7 +126,7 @@
 		?>
 		<script src="js/minicart.js"></script>
 		<script>
-			var items = w3ls.cart.items(1);
+			var items = w3ls.cart.items();
 			
 			window.location.href = "somepage.php?w1=" + "hello" + "&w2=" + items.toString();
 			
